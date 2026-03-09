@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SilverConnections - Dating for Seniors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🌟 SilverConnections</h1>
+            <p class="tagline">Finding companionship in your golden years</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <button class="nav-btn active" data-page="home">Home</button>
+            <button class="nav-btn" data-page="browse">Browse Profiles</button>
+            <button class="nav-btn" data-page="matches">My Matches</button>
+            <button class="nav-btn" data-page="profile">My Profile</button>
+            <button class="nav-btn" data-page="messages">Messages</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Home Page -->
+        <section id="home-page" class="page active">
+            <div class="welcome-section">
+                <h2>Welcome to SilverConnections</h2>
+                <p class="intro-text">Never too late to find love, friendship, or companionship. Join our community of vibrant seniors looking to connect.</p>
+                
+                <!-- Stats Section -->
+                <div class="stats-section">
+                    <div class="stat-item">
+                        <span class="stat-number">1,250+</span>
+                        <span class="stat-label">Active Members</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">350+</span>
+                        <span class="stat-label">Success Stories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Verified Profiles</span>
+                    </div>
+                </div>
+
+                <div class="features">
+                    <div class="feature-card">
+                        <span class="feature-icon">👥</span>
+                        <h3>Genuine Connections</h3>
+                        <p>Meet people who share your interests and life experiences</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🔒</span>
+                        <h3>Safe & Secure</h3>
+                        <p>Large fonts, simple design, and verified profiles for your peace of mind</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">💝</span>
+                        <h3>Your Pace</h3>
+                        <p>Take your time getting to know someone special</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">💬</span>
+                        <h3>Easy Messaging</h3>
+                        <p>Simple and intuitive chat interface designed for comfort</p>
+                    </div>
+                </div>
+
+                <!-- Testimonials -->
+                <div class="testimonials">
+                    <h3>Success Stories</h3>
+                    <div class="testimonial-grid">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"I met my wonderful companion here after being alone for 5 years. We share a love for gardening and travel!"</p>
+                            <p class="testimonial-author">- Margaret & John, Boston</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Never thought I'd find love again at 72. This site gave me hope and a beautiful second chance."</p>
+                            <p class="testimonial-author">- Robert, Seattle</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="cta-button" onclick="showPage('browse')">Start Browsing Profiles</button>
+            </div>
+        </section>
+
+        <!-- Browse Profiles Page -->
+        <section id="browse-page" class="page">
+            <h2>Browse Profiles</h2>
+            <div class="filters">
+                <label>
+                    <span>Age Range:</span>
+                    <select id="age-filter">
+                        <option value="all">All Ages</option>
+                        <option value="50-60">50-60</option>
+                        <option value="60-70">60-70</option>
+                        <option value="70-80">70-80</option>
+                        <option value="80+">80+</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Interests:</span>
+                    <select id="interest-filter">
+                        <option value="all">All Interests</option>
+                        <option value="travel">Travel</option>
+                        <option value="gardening">Gardening</option>
+                        <option value="reading">Reading</option>
+                        <option value="dancing">Dancing</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Location:</span>
+                    <select id="location-filter">
+                        <option value="all">All Locations</option>
+                        <option value="east">East Coast</option>
+                        <option value="west">West Coast</option>
+                        <option value="south">South</option>
+                        <option value="midwest">Midwest</option>
+                    </select>
+                </label>
+            </div>
+            
+            <div id="profiles-grid" class="profiles-grid">
+                <!-- Profiles will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Matches Page -->
+        <section id="matches-page" class="page">
+            <h2>My Matches</h2>
+            <div id="matches-list" class="matches-list">
+                <p class="empty-state">You haven't made any connections yet. Start browsing profiles to find your match!</p>
+            </div>
+        </section>
+
+        <!-- Messages Page -->
+        <section id="messages-page" class="page">
+            <h2>Messages</h2>
+            <div class="messages-container">
+                <div class="conversations-list">
+                    <h3>Conversations</h3>
+                    <div id="conversations">
+                        <p class="empty-state">No messages yet. Connect with someone to start chatting!</p>
+                    </div>
+                </div>
+                <div class="chat-area">
+                    <div id="chat-header" class="chat-header">
+                        <p>Select a conversation to view messages</p>
+                    </div>
+                    <div id="chat-messages" class="chat-messages">
+                        <!-- Messages will appear here -->
+                    </div>
+                    <div id="chat-input-area" class="chat-input-area" style="display: none;">
+                        <input type="text" id="message-input" placeholder="Type your message...">
+                        <button onclick="sendChatMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Page -->
+        <section id="profile-page" class="page">
+            <h2>My Profile</h2>
+            <form id="profile-form" class="profile-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" min="50" max="120" placeholder="Your age" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" placeholder="City, State" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select...</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="interests">Interests:</label>
+                    <textarea id="interests" name="interests" rows="4" placeholder="Tell us about your hobbies and interests..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="about">About Me:</label>
+                    <textarea id="about" name="about" rows="6" placeholder="Share a bit about yourself and what you're looking for..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Save Profile</button>
+            </form>
+            <div id="profile-saved" class="success-message" style="display: none;">
+                ✓ Profile saved successfully!
+            </div>
+
+            <!-- Profile Preview -->
+            <div id="profile-preview" class="profile-preview" style="display: none;">
+                <h3>Profile Preview</h3>
+                <div class="profile-card preview-card">
+                    <h3 id="preview-name"></h3>
+                    <p class="profile-info" id="preview-location"></p>
+                    <p class="profile-info" id="preview-gender"></p>
+                    <p class="profile-interests" id="preview-interests"></p>
+                    <p class="profile-about" id="preview-about"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SilverConnections. Finding love at any age.</p>
+            <p class="footer-links">
+                <a href="#privacy">Privacy Policy</a> | 
+                <a href="#terms">Terms of Service</a> | 
+                <a href="#help">Help Center</a> | 
+                <a href="#safety">Safety Tips</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
